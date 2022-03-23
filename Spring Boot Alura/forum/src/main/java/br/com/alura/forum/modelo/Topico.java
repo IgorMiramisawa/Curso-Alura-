@@ -1,6 +1,5 @@
 package br.com.alura.forum.modelo;
 
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +15,9 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Topico {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id ;
+
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String titulo;
 	private String mensagem;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
@@ -30,16 +29,14 @@ public class Topico {
 	private Curso curso;
 	@OneToMany(mappedBy = "topico")
 	private List<Resposta> respostas = new ArrayList<>();
-
-	public Topico () {
-		
+	
+	public Topico() {
 	}
 	
-	public Topico (String titulo , String mensagem , Curso curso) {
+	public Topico(String titulo, String mensagem, Curso curso) {
 		this.titulo = titulo;
 		this.mensagem = mensagem;
 		this.curso = curso;
-		
 	}
 
 	@Override
@@ -70,9 +67,9 @@ public class Topico {
 	public Long getId() {
 		return id;
 	}
-	
+
 	public void setId(Long id) {
-		this.id = id ;
+		this.id = id;
 	}
 
 	public String getTitulo() {

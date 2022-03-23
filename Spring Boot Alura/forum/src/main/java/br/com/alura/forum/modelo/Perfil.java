@@ -9,12 +9,10 @@ import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 public class Perfil implements GrantedAuthority {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY )
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String nome;
@@ -37,9 +35,7 @@ public class Perfil implements GrantedAuthority {
 
 	@Override
 	public String getAuthority() {
-		
 		return nome;
 	}
-	
 	
 }
