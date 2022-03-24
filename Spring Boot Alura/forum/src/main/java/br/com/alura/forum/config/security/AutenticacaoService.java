@@ -22,8 +22,7 @@ public class AutenticacaoService implements UserDetailsService {
 		Optional<Usuario> usuario = repository.findByEmail(username);
 		if (usuario.isPresent()) {
 			return usuario.get();
-		}
-		
+		}		
 		throw new UsernameNotFoundException("Dados inválidos!");
 	}
 
